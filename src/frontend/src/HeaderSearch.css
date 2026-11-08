@@ -1,0 +1,25 @@
+.header-reader-search { position: relative; flex: 1 1 200px; min-width: 150px; max-width: 300px; color: var(--muted); }
+.header-reader-search > input { box-sizing: border-box; width: 100%; height: 42px; padding: 10px 32px 10px 36px; border: 1px solid var(--line); border-radius: 22px; background: #211921; color: #f1e6dc; font: inherit; font-size: .83rem; }
+.header-reader-search > input::placeholder { color: var(--muted); }
+.header-search-icon { position: absolute; left: 13px; top: 13px; width: 16px; height: 16px; pointer-events: none; }
+.header-search-clear { position: absolute; right: 5px; top: 5px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); cursor: pointer; font-size: 1.2rem; }
+.header-reader-dropdown { position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 100; padding: 6px; border: 1px solid var(--line); border-radius: 14px; background: #211921; box-shadow: 0 12px 30px #49332124; }
+.header-reader-dropdown ul { list-style: none; padding: 0; margin: 0; }
+.header-reader-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 8px; border-radius: 9px; color: #f1e6dc; font-size: .82rem; overflow-wrap: anywhere; text-decoration: none; }
+.header-reader-dropdown li[aria-selected="true"] a, .header-reader-dropdown a:hover { background: #49303a; }
+.header-reader-avatar { display: grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: #49303a; color: var(--gold); }
+.header-reader-arrow { margin-left: auto; color: var(--muted); }
+.header-reader-status { padding: 10px; font-size: .78rem; line-height: 1.5; }
+.header-reader-status:empty { display: none; }
+@media (max-width: 1000px) {
+    .site-header { flex-wrap: wrap; }
+    .header-reader-search { margin-left: auto; }
+    .site-header nav { flex: 1 0 100%; justify-content: center; flex-wrap: wrap; }
+}
+@media (max-width: 400px) {
+    .header-reader-search { flex-basis: 100%; max-width: none; }
+}
+
+.site-header{gap:28px}.header-reader-search{margin-right:auto}.header-reader-dropdown .cinema-avatar{width:34px;height:34px}.site-header nav{flex-shrink:0}.header-reader-dropdown{box-shadow:0 15px 35px #0008}
+.movie-actions legend{font:24px Georgia,serif;margin-bottom:20px;color:var(--gold)}.film-review-panel{padding:24px;margin-top:25px;border:1px solid var(--line);border-radius:14px;background:#17131970}.review-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.review-panel-heading h3{font:24px Georgia,serif;margin:10px 0}.film-review-panel .score-fields{margin-top:25px}.movie-actions .action-row{align-items:center}
+@media(max-width:700px){.site-header{gap:16px}.site-header nav{justify-content:space-between}.header-reader-search{max-width:300px}.review-panel-heading{align-items:start;flex-direction:column}.film-review-panel{padding:18px}.review-panel-heading h3{font-size:22px}}@media(max-width:400px){.header-reader-search{max-width:none}}

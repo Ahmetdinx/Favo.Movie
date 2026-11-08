@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.4" />
+    <PackageReference Include="Testcontainers.PostgreSql" Version="4.14.0" />
+    <ProjectReference Include="../../src/backend/Favo.Movie.Api/Favo.Movie.Api.csproj" Aliases="movie,global" />
+    <ProjectReference Include="$(BooksRoot)/src/backend/Api/Favo.Books.Api/Favo.Books.Api.csproj" Aliases="books" />
+  </ItemGroup>
+  <Target Name="RequireBooksRoot" BeforeTargets="PrepareForBuild" Condition="'$(BooksRoot)' == ''"><Error Text="Pass -p:BooksRoot=path-to-Favo.Books" /></Target>
+</Project>

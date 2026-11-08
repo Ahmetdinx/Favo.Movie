@@ -1,0 +1,6 @@
+<Solution>
+ <Folder Name="/src/"><Project Path="src/backend/Favo.Movie.Api/Favo.Movie.Api.csproj" /></Folder>
+ <Folder Name="/tests/"><Project Path="tests/Favo.Movie.Checks/Favo.Movie.Checks.csproj" /></Folder>
+ <Folder Name="/Frontend/"><File Path="src/frontend/package.json" /><File Path="src/frontend/src/App.tsx" /><File Path="src/frontend/src/styles.css" /><File Path="src/frontend/src/Community.tsx" /><File Path="src/frontend/src/community.css" /></Folder>
+ <Folder Name="/Docs/"><File Path="README.md" /></Folder>
+</Solution>
