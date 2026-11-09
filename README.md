@@ -39,7 +39,7 @@ Resmi belgeler: https://developer.themoviedb.org/docs/faq, https://developer.the
 
 ## Çalıştırma
 
-Favo ana projesindeki `Start-Favo.ps1`, varsayılan olarak `~/source/repos/Favo.Movie` klasörünü bulur, Movie API'yi 5130 portunda başlatır ve ön yüzü `/film/` altında sunar. Ana adres: http://localhost:5175/film/
+Favo ana projesindeki `Start-Favo.ps1`, projeyi Favo'nun yanındaki `Favo.Movie` klasöründe veya `~/source/repos` altında bulur, Movie API'yi 5130 portunda başlatır ve ön yüzü `/film/` altında sunar. Ana adres: http://localhost:5175/film/
 
 Farklı konum için Favo başlatıcısına `-MovieRoot 'PROJE_YOLU'` verin. Kitap API ortak hesap kaynağı olarak çalışmaya devam eder.
 
@@ -66,9 +66,9 @@ Kontroller sahte HTTP yanıtlarıyla filtre doğrulama, kaynak eşleme, kodlama,
 Topluluk entegrasyon testi Docker'da geçici PostgreSQL ve ayrı SQLite kullanır; kişisel veritabanına dokunmaz:
 
 ```powershell
-$env:FAVO_BOOKS_ROOT='C:\Users\ahmet\source\repos\KitapKivo'
-$env:FAVO_MOVIE_ROOT='C:\Users\ahmet\source\repos\Favo.Movie'
-dotnet run --project tests/Favo.Movie.CommunityChecks -c Release -p:BooksRoot=C:/Users/ahmet/source/repos/KitapKivo
+$env:FAVO_BOOKS_ROOT=(Resolve-Path ..\Favo.Books).Path
+$env:FAVO_MOVIE_ROOT=$PWD.Path
+dotnet run --project tests/Favo.Movie.CommunityChecks -c Release -p:BooksRoot=$env:FAVO_BOOKS_ROOT
 ```
 
 Bu test ortak giriş, hesap ayrımı, avatar kaydı, takip/gizlilik, öneri eşikleri, puan ağırlıkları ve kalıcılığı doğrular. TMDB yanıtları yalnızca test host'unda sahtedir; test filmleri normal uygulamaya eklenmez. Test projesi BooksRoot gerektirdiği için ana çözümün varsayılan derlemesine dahil edilmez.
